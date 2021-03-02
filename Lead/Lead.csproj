@@ -290,4 +290,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Assets\item_lead" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="UnityProject\LeadUnityProject.zip" />
+  </ItemGroup>
 </Project>
