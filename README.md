@@ -1,4 +1,4 @@
-# Lead – A custom item for leashing and leading mobs
+# Lead - A custom item for leashing and leading mobs
 
 ## About
 
