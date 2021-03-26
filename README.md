@@ -8,11 +8,19 @@ Add an item that allows for leashing mobs around, dealing no damage. Craftable b
 
 The content should be extracted into the `BepInEx` folder, such that the Lead folder in `plugins` in the archive is inside your `plugins` folder of your BepInEx installation.
 
+Make sure that you have also installed the [HookGenPatcher](https://valheim.thunderstore.io/package/ValheimModding/HookGenPatcher/)
+
+And [ValheimLib](https://valheim.thunderstore.io/package/ValheimModding/ValheimLib/)
+
 ## For mod developers
 
 If you are taking as an example the unity project in the repo, make sure to put the dlls from your game `Managed` folder that starts with `assembly_` into the `Assets` folder !
 
 ## Changelog
+
+**0.0.3**
+
+* Updated to use latest ValheimLib version.
 
 **0.0.2**
 
