@@ -10,7 +10,7 @@ namespace Lead
     {
         public const string ModGuid = "iDeathHD." + ModName;
         private const string ModName = "Lead";
-        private const string ModVer = "0.0.2";
+        private const string ModVer = "0.0.3";
 
         internal static Lead Instance { get; private set; }
 
