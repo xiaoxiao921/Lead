@@ -19,13 +19,15 @@ namespace Lead.Items.Lead
 
         public const string CraftingStationPrefabName = "piece_workbench";
 
+        public const string TokenLanguage = "English";
+
         internal static void Init()
         {
             AddCustomRecipe();
             AddCustomItem();
 
-            Language.AddToken(TokenName, TokenValue);
-            Language.AddToken(TokenDescriptionName, TokenDescriptionValue);
+            Language.AddToken(TokenName, TokenValue, TokenLanguage);
+            Language.AddToken(TokenDescriptionName, TokenDescriptionValue, TokenLanguage);
         }
 
         private static void AddCustomRecipe()
