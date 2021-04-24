@@ -1,8 +1,7 @@
-﻿using System.Linq;
+﻿using Jotunn.Managers;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using ValheimLib;
-using ValheimLib.ODB;
 using UnityObject = UnityEngine.Object;
 
 namespace Lead.Util
@@ -25,12 +24,12 @@ namespace Lead.Util
             LeadAssetBundle = GetAssetBundleFromResources(AssetBundleName);
             LeadPrefab = LeadAssetBundle.LoadAsset<GameObject>(LeadPrefabPath);
 
-            ObjectDBHelper.OnAfterInit += () =>
+            ItemManager.OnAfterInit += () => 
             {
-                var chitinHarpoon = Prefab.Cache.GetPrefab<Projectile>(ChitinHarpoonPrefabName);
+                var chitinHarpoon = PrefabManager.Cache.GetPrefab<Projectile>(ChitinHarpoonPrefabName);
                 if (chitinHarpoon)
                 {
-                    LeadProjectilePrefab = Prefab.InstantiateClone(chitinHarpoon.gameObject, LeadProjectilePrefabName);
+                    LeadProjectilePrefab = PrefabManager.Instance.CreateClonedPrefab(LeadProjectilePrefabName, chitinHarpoon.gameObject);
 
                     UnityObject.Destroy(LeadProjectilePrefab.transform.GetChild(FangSpearIndex).gameObject);
 

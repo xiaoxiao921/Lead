@@ -1,8 +1,9 @@
-﻿using Lead.Util;
+﻿using Jotunn.Configs;
+using Jotunn.Entities;
+using Jotunn.Managers;
+using Lead.Util;
 using System.Collections.Generic;
 using UnityEngine;
-using ValheimLib;
-using ValheimLib.ODB;
 
 namespace Lead.Items.Lead
 {
@@ -26,8 +27,14 @@ namespace Lead.Items.Lead
             AddCustomRecipe();
             AddCustomItem();
 
-            Language.AddToken(TokenName, TokenValue, TokenLanguage);
-            Language.AddToken(TokenDescriptionName, TokenDescriptionValue, TokenLanguage);
+            LocalizationManager.Instance.AddLocalization(new LocalizationConfig(TokenLanguage)
+            {
+                Translations = 
+                {
+                    { TokenName.Trim('$'), TokenValue },
+                    { TokenDescriptionName.Trim('$'), TokenDescriptionValue }
+                }
+            });
         }
 
         private static void AddCustomRecipe()
@@ -45,14 +52,13 @@ namespace Lead.Items.Lead
             recipe.m_resources = neededResources.ToArray();
 
             CustomRecipe = new CustomRecipe(recipe, false, true);
-            ObjectDBHelper.Add(CustomRecipe);
+            ItemManager.Instance.AddRecipe(CustomRecipe);
         }
 
         private static void AddCustomItem()
         {
             CustomItem = new CustomItem(AssetHelper.LeadPrefab, true);
-
-            ObjectDBHelper.Add(CustomItem);
+            ItemManager.Instance.AddItem(CustomItem);
         }
     }
 }
