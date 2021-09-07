@@ -4,13 +4,13 @@ using Lead.Util;
 
 namespace Lead
 {
-    [BepInDependency(ValheimLib.ValheimLib.ModGuid)]
+    [BepInDependency(Jotunn.Main.ModGuid)]
     [BepInPlugin(ModGuid, ModName, ModVer)]
     public class Lead : BaseUnityPlugin
     {
         public const string ModGuid = "iDeathHD." + ModName;
         private const string ModName = "Lead";
-        private const string ModVer = "0.0.3";
+        private const string ModVer = "0.0.4";
 
         internal static Lead Instance { get; private set; }
 
